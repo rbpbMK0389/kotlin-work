@@ -1,6 +1,6 @@
 // Task 7.7.1: statistics functions
 
-fun computeMedian(filename: String): Float {
+fun median(filename: String): Float {
     // to find median:
     // order list of nums lowest to highest
     // list of nums is odd -> (n+1)/2
@@ -9,7 +9,7 @@ fun computeMedian(filename: String): Float {
 
     val list = readData(filename)
 
-    require(list.isNotEmpty()) {"List cannot be empty"}
+    require(list.isNotEmpty()) {println("List cannot be empty")}
 
     val sorted = list.sorted()
 
@@ -38,8 +38,8 @@ fun printStats(filename: String) {
 
     val list = readData(filename)
 
-    println("Median: ${computeMedian(filename)}")
-    println("Mean: ${list.average()}")
+    println("Median: ${median(filename)}")
+    println("Mean: %.2f".format(list.average()))
     println("Min: ${list.min()}")
     println("Max: ${list.max()}")
 

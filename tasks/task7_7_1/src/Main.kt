@@ -2,9 +2,11 @@
 
 
 fun main(args: Array<String>) {
+
+    require(args.isNotEmpty()) {"filename is required"}
     val filename = args[0]
 
-    computeMedian(filename)
+    median(filename)
 
     printStats(filename)
 }
