@@ -1,4 +1,7 @@
-// Task 7.7.1: statistics functions
+// Week 3 portfolio
+// work by Majeedah Khan
+
+// 20/10/26
 
 fun median(list: List<Float>): Float {
     // to find median:
