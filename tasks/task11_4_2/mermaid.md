@@ -3,9 +3,25 @@
 Here is a UML class diagram, specified using [Mermaid][mer].
 
 ```mermaid
-%% Replace this line and the two below
 classDiagram
-  note "Placeholder for a real class diagram"
+    class Student {
+        id: Int
+        name: String
+        degreeProgramme: String
+        levelOfStudy: Int
+    }
+
+    class Module {
+        moduleCode: String
+        title: String
+        numCredits: Int
+        enrolStudent(student: Student)
+        generateTranscript(student: Student)
+    }
+
+    Student -- Module: enrols on
+
+
 ```
 
 
