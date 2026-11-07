@@ -3,4 +3,4 @@
 class Point(var x: Double, var y: Double) {
     constructor(): this(0.0, 0.0) 
     constructor(x: Int, y: Int): this(x.toDouble(), y.toDouble())
-}
+} 
