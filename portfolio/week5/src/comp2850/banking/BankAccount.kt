@@ -26,34 +26,34 @@ abstract class BankAccount(val holder: String) { // abstract is open by default
     abstract fun withdraw(amount: Int) 
 }
 
-class StudentAccount(holder: String) : BankAccount(holder) {
+// class StudentAccount(holder: String) : BankAccount(holder) {
 
-    // uses setter to set overdraft, O otherwise
-    var overdraft = 0
-        set(value) {
-            require(value >= 0 && value <= 100) 
-            field = value
-        }
+//     // uses setter to set overdraft, O otherwise
+//     var overdraft = 0
+//         set(value) {
+//             require(value >= 0 && value <= 100) 
+//             field = value
+//         }
 
-    override fun toString(): String {
-        return "Account for ${holder}, balance = ${balance} (overdraft = ${overdraft})"
-    }
+//     override fun toString(): String {
+//         return "Account for ${holder}, balance = ${balance} (overdraft = ${overdraft})"
+//     }
 
-    // uses override since withdraw is an abstract class in BankAccount
-    override fun withdraw(amount: Int) {
-        require(amount > 0) {"Withdrawal amount must be greater than 0"}
+//     // uses override since withdraw is an abstract class in BankAccount
+//     override fun withdraw(amount: Int) {
+//         require(amount > 0) {"Withdrawal amount must be greater than 0"}
 
-        if ((balance - amount) < (-overdraft)) {
-            throw IllegalArgumentException("Insufficient funds for withdrawal")
-        }
+//         if ((balance - amount) < (-overdraft)) {
+//             throw IllegalArgumentException("Insufficient funds for withdrawal")
+//         }
 
-        balance = balance - amount
-    }
+//         balance = balance - amount
+//     }
 
-    fun withdrawalsAllowed(): Boolean {
-        if (balance > (-overdraft)) {
-            return true
-        }
-        return false
-    }
-}
+//     fun withdrawalsAllowed(): Boolean {
+//         if (balance > (-overdraft)) {
+//             return true
+//         }
+//         return false
+//     }
+// }
